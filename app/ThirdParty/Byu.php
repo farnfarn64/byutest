@@ -39,9 +39,9 @@ class Byu {
 	*/
 	public function format_item(&$item) {
 		if ($item['type'] == "FILM") {
-			$item['type_description'] = "Would you watch this Film";
+			$item['type_description'] = "Would you watch this?";
 		} else {
-			$item['type_description'] = "Would you read this Book";
+			$item['type_description'] = "Would you read this?";
 		}
 
 		if (isset($item['author'])) {
@@ -51,6 +51,8 @@ class Byu {
 		} else {
 			$item['authors'] = [];
 		}
+
+		$item['type_lowercase'] = ucfirst(strtolower($item['type']));		
 
 		return $item;
 	}
